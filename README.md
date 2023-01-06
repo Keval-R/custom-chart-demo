@@ -1,70 +1,164 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# **react-custom-doughnut-chart**
 
-## Available Scripts
+This custom custom doughnut chart create using react-chartjs-2 npm package.
+Here is 2 chart. First is full doughnut chart when user select any seaction that time half doughnut chart value change & also change bottom data.Also this chart is dynamic create as pass data.So you can change color,text & more using dynmaic using API.
 
-In the project directory, you can run:
 
-### `npm start`
+**Image**:![screenshot-localhost_3000-2023 01 06-16_27_45](https://user-images.githubusercontent.com/108857417/211002967-1eccf892-809c-4da4-98b9-b19583a08feb.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Video:** https://user-images.githubusercontent.com/108857417/211003095-3dddd797-803f-42e1-87f8-6352b1c5cccf.mp4
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# **Installation**
 
-### `npm run build`
+> npm i
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+>npm run start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# **Usage**
+> import Chart from "react-custom-doughnut-chart"
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> < Chart data={fakeData}/>
 
-### `npm run eject`
+Note: Here fakeData is JSON which is you need to pass in component.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# **JSON**
+Here is short description few parmeters .  
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1> tipData,chartExtraData you pass [ ] (empty array) that time UI side hide that secation.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2> chartOneTipData & chartTwoTipData you pass empty string ("")  that time UI side hide that secation.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3> chartOneDatasetLabel & chartTwoDatasetLabel is string which is use for tooltip side show extar text.
 
-## Learn More
+4> chartOne & chartTwo parmeter use for show dynamic chart.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    export const fakeData = {
+      chartOneDatasetLabel: "use",
+      chartTwoDatasetLabel: "use",
+      chartOne: [
+        {
+          name: "Abhik Ghosh",
+          backgroundColor: "rgba(255, 99, 132, 0.2)",
+          borderColor: "rgba(255, 99, 132, 1)",
+          data: 65,
+        },
+        {
+          name: "Bobby Deol",
+          backgroundColor: "rgba(54, 162, 235, 0.2)",
+          borderColor: "rgba(54, 162, 235, 1)",
+          data: 44,
+        },
+        {
+          name: "Sunny Deol",
+          backgroundColor: "rgba(75, 192, 192, 0.2)",
+          borderColor: "rgba(75, 192, 192, 1)",
+          data: 80,
+        },
+        {
+          name: "Dharam Singh Deol",
+          backgroundColor: "rgba(153, 102, 255, 0.2)",
+          borderColor: "rgba(153, 102, 255, 1)",
+          data: 12,
+        },
+        {
+          name: "Hema Malini",
+          backgroundColor: "rgba(255, 159, 64, 0.2)",
+          borderColor: "rgba(255, 159, 64, 1)",
+          data: 30,
+        },
+      ],
+      chartTwo: [
+        {
+          name: "Food",
+          backgroundColor: "rgba(255, 99, 132, 0.2)",
+          borderColor: "rgba(255, 99, 132, 1)",
+          data: [12, 19, 13, 15, 12],
+          text: "60%",
+        },
+        {
+          name: "Water",
+          backgroundColor: "rgba(54, 162, 235, 0.2)",
+          borderColor: "rgba(54, 162, 235, 1)",
+          data: [50, 20, 23, 85, 92],
+          text: "64%",
+        },
+        {
+          name: "Shelter",
+          backgroundColor: "rgba(75, 192, 192, 0.2)",
+          borderColor: "rgba(75, 192, 192, 1)",
+          data: [20, 30, 63, 65, 72],
+          text: "15%",
+        },
+        {
+          name: "Education",
+          backgroundColor: "rgba(153, 102, 255, 0.2)",
+          borderColor: "rgba(153, 102, 255, 1)",
+          data: [20, 45, 93, 45, 62],
+          text: "95%",
+        },
+        {
+          name: "Others",
+          backgroundColor: "rgba(255, 159, 64, 0.2)",
+          borderColor: "rgba(255, 159, 64, 1)",
+          data: [80, 85, 43, 75, 42],
+          text: "45%",
+        },
+      ],
+      chartOneTipData:"Tip one:",
+      chartTwoTipData:"Tip two:",
+      tipData: [
+        {
+          tip1: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
+          tip2: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
+        },
+        {
+          tip1: "tip2 main",
+          tip2: "tip2 extra",
+        },
+        {
+          tip1: "tip3 main",
+          tip2: "tip3 extra",
+        },
+        {
+          tip1: "tip4 main",
+          tip2: "tip4 extra",
+        },
+        {
+          tip1: "tip5 main",
+          tip2: "tip5 extra",
+        },
+      ],
+      chartExtraDataLabel:'User Data',
+      chartExtraData: [
+        {
+          name: "Abhik Ghosh",
+          bio: "Abhik Ghosh is an Indian inorganic chemist and materials scientist and a professor of chemistry at UiT – The Arctic University of Norway in Tromsø, Norway.",
+          dob: "June 12, 1964",
+        },
+        {
+          name: "Bobby Deol",
+          bio: "Vijay Singh Deol (born 27 January 1967) popularly known as Bobby Deol, is an Indian actor who works in Hindi cinema and web series.[1][2] A member of the Deol family, he is the younger son of veteran actor Dharmendra. His accolades include a Filmfare Award.",
+          dob: "January 27, 1967",
+        },
+        {
+          name: "Sunny Deol",
+          bio: "Ajay Singh Deol (born 19 October 1956),[1][3] better known by his stage name Sunny Deol, is an Indian actor, film director, producer, politician and current Member of Parliament from Gurdaspur (Lok Sabha constituency) of Punjab, India.[4] As an actor, he has worked in more than 100 Hindi films and earned the image of an angry action hero.[5] He went on to star in numerous successful films in the 1980s and 1990s and is considered as one of the top stars of that time.[6] He starred in several blockbuster movies such as Ghayal, Darr, Damini, Jeet, Ghatak, Ziddi, Border and Gadar: Ek Prem Katha.[7] Deol has won two National Film Award for Best Actor[8][9] and two Filmfare Awards.[",
+          dob: "October 19,1956 ",
+        },
+        {
+          name: "Dharam Singh Deol",
+          bio: 'Dharam Singh Deol (born 8 December 1935), also known mononymously as Dharmendra, is an Indian actor, producer and politician who is known for his work in Hindi films He has also worked in few Punjabi films. Known as the first "He-Man" of Bollywood, Dharmendra has worked in over 301 films in a career spanning over six decades,[1][2]He is one of the most successful actors in the history of Hindi Cinema.[3][4][5] In 1997, he received the Filmfare Lifetime Achievement Award for his contribution to Hindi cinema. He was a member of the 15th Lok Sabha of India, representing Bikaner constituency in Rajasthan from Bharatiya Janata Party (BJP). In 2012, he was awarded India third-highest civilian honour Padma Bhushan by the Government of India.',
+          dob: "December 8,1935  ",
+        },
+        {
+          name: "Hema Malini",
+          bio: "Hema Malini (born 16 October 1948) is an Indian actress, director, producer, and politician.[5] She is primarily known for her work in Hindi films. Known for starring in both comic and dramatic roles, she is one of the most popular and successful leading actresses of mainstream Hindi cinema.[6][7][8] She is known as Dream Girl of Hindi cinema",
+          dob: "October 16,1948",
+        },
+      ]
+    };
+    
