@@ -1,5 +1,5 @@
-import Chart from "./Chart";
-import { fakeData } from "./api";
+import Chart from "./lib/Chart";
+import { fakeData } from "./lib/api";
 
 function App() {
   return(

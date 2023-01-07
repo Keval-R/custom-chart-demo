@@ -1,8 +1,12 @@
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./Chart.css";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import React from "react";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend,LinearScale } from "chart.js";
 import { getElementAtEvent, Doughnut } from "react-chartjs-2";
 import { useEffect, useRef, useState } from "react";
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(ArcElement, Tooltip, Legend,LinearScale);
 
 export const centerText = [
   {
