@@ -12,9 +12,7 @@ Here is 2 chart. First is full doughnut chart when user select any seaction that
 
 # **Installation**
 
-> npm i
-
->npm run start
+> npm i custom-react-doughnut-chart
 
 # **Usage**
 > import Chart from "custom-react-doughnut-chart"
