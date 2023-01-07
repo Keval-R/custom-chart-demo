@@ -1,7 +1,6 @@
+# **custom-react-doughnut-chart**
 
-# **react-custom-doughnut-chart**
-
-This custom custom doughnut chart create using react-chartjs-2 npm package.
+This is custom doughnut chart.
 Here is 2 chart. First is full doughnut chart when user select any seaction that time half doughnut chart value change & also change bottom data.Also this chart is dynamic create as pass data.So you can change color,text & more using dynmaic using API.
 
 
@@ -18,7 +17,7 @@ Here is 2 chart. First is full doughnut chart when user select any seaction that
 >npm run start
 
 # **Usage**
-> import Chart from "react-custom-doughnut-chart"
+> import Chart from "custom-react-doughnut-chart"
 
 > < Chart data={fakeData}/>
 
@@ -35,6 +34,7 @@ Here is short description few parmeters .
 
 4> chartOne & chartTwo parmeter use for show dynamic chart.
 
+**Example:**
 
     export const fakeData = {
       chartOneDatasetLabel: "use",
@@ -45,30 +45,40 @@ Here is short description few parmeters .
           backgroundColor: "rgba(255, 99, 132, 0.2)",
           borderColor: "rgba(255, 99, 132, 1)",
           data: 65,
+          chartTwoData: [12, 19, 13, 15, 12],
+          text: "60%",
         },
         {
           name: "Bobby Deol",
           backgroundColor: "rgba(54, 162, 235, 0.2)",
           borderColor: "rgba(54, 162, 235, 1)",
           data: 44,
+          chartTwoData: [50, 20, 23, 85, 92],
+          text: "64%",
         },
         {
           name: "Sunny Deol",
           backgroundColor: "rgba(75, 192, 192, 0.2)",
           borderColor: "rgba(75, 192, 192, 1)",
           data: 80,
+          chartTwoData: [20, 30, 63, 65, 72],
+          text: "15%",
         },
         {
           name: "Dharam Singh Deol",
           backgroundColor: "rgba(153, 102, 255, 0.2)",
           borderColor: "rgba(153, 102, 255, 1)",
           data: 12,
+          chartTwoData: [20, 45, 93, 45, 62],
+          text: "95%",
         },
         {
           name: "Hema Malini",
           backgroundColor: "rgba(255, 159, 64, 0.2)",
           borderColor: "rgba(255, 159, 64, 1)",
           data: 30,
+          chartTwoData: [80, 85, 43, 75, 42],
+          text: "60%",
         },
       ],
       chartTwo: [
@@ -76,22 +86,16 @@ Here is short description few parmeters .
           name: "Food",
           backgroundColor: "rgba(255, 99, 132, 0.2)",
           borderColor: "rgba(255, 99, 132, 1)",
-          data: [12, 19, 13, 15, 12],
-          text: "60%",
         },
         {
           name: "Water",
           backgroundColor: "rgba(54, 162, 235, 0.2)",
           borderColor: "rgba(54, 162, 235, 1)",
-          data: [50, 20, 23, 85, 92],
-          text: "64%",
         },
         {
           name: "Shelter",
           backgroundColor: "rgba(75, 192, 192, 0.2)",
           borderColor: "rgba(75, 192, 192, 1)",
-          data: [20, 30, 63, 65, 72],
-          text: "15%",
         },
         {
           name: "Education",
@@ -104,12 +108,10 @@ Here is short description few parmeters .
           name: "Others",
           backgroundColor: "rgba(255, 159, 64, 0.2)",
           borderColor: "rgba(255, 159, 64, 1)",
-          data: [80, 85, 43, 75, 42],
-          text: "45%",
         },
       ],
-      chartOneTipData:"Tip one:",
-      chartTwoTipData:"Tip two:",
+      chartOneTipData: "Tip one:",
+      chartTwoTipData: "Tip two:",
       tipData: [
         {
           tip1: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
@@ -132,7 +134,7 @@ Here is short description few parmeters .
           tip2: "tip5 extra",
         },
       ],
-      chartExtraDataLabel:'User Data',
+      chartExtraDataLabel: "User Data",
       chartExtraData: [
         {
           name: "Abhik Ghosh",
@@ -159,6 +161,5 @@ Here is short description few parmeters .
           bio: "Hema Malini (born 16 October 1948) is an Indian actress, director, producer, and politician.[5] She is primarily known for her work in Hindi films. Known for starring in both comic and dramatic roles, she is one of the most popular and successful leading actresses of mainstream Hindi cinema.[6][7][8] She is known as Dream Girl of Hindi cinema",
           dob: "October 16,1948",
         },
-      ]
+      ],
     };
-    

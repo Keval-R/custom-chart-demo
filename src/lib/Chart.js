@@ -3,10 +3,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./Chart.css";
 import React from "react";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend,LinearScale } from "chart.js";
+import {
+  Chart as ChartJS,
+  ArcElement,
+  Tooltip,
+  Legend,
+  LinearScale,
+} from "chart.js";
 import { getElementAtEvent, Doughnut } from "react-chartjs-2";
 import { useEffect, useRef, useState } from "react";
-ChartJS.register(ArcElement, Tooltip, Legend,LinearScale);
+ChartJS.register(ArcElement, Tooltip, Legend, LinearScale);
 
 export const centerText = [
   {
@@ -107,6 +113,8 @@ const Chart = (props) => {
       setChartOneBorderColor([]);
       setChartOneData([]);
       setChartOneTitle([]);
+      setChartTwoData([]);
+      setCenterTextChartTwo([]);
       data?.chartOne.map((data) => {
         setChartOneBackgroundColor((oldData) => [
           ...oldData,
@@ -119,6 +127,8 @@ const Chart = (props) => {
 
         setChartOneTitle((oldData) => [...oldData, data?.name ?? ""]);
         setChartOneData((oldData) => [...oldData, data?.data ?? ""]);
+        setChartTwoData((oldData) => [...oldData, data?.chartTwoData ?? []]);
+        setCenterTextChartTwo((oldData) => [...oldData, data?.text ?? ""]);
         return true;
       });
     }
@@ -127,9 +137,7 @@ const Chart = (props) => {
       setChartTwoBorderColor([]);
       setChartTwoBackgroundColor([]);
       setChartTwoTitle([]);
-      setChartTwoData([]);
-      setCenterTextChartTwo([]);
-
+     
       data?.chartTwo.map((data) => {
         setChartTwoBackgroundColor((oldData) => [
           ...oldData,
@@ -140,8 +148,7 @@ const Chart = (props) => {
           data?.borderColor ?? "",
         ]);
         setChartTwoTitle((oldData) => [...oldData, data?.name ?? ""]);
-        setChartTwoData((oldData) => [...oldData, data?.data ?? []]);
-        setCenterTextChartTwo((oldData) => [...oldData, data?.text ?? ""]);
+
         return true;
       });
     }
