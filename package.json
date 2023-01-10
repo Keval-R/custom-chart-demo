@@ -1,6 +1,10 @@
 {
   "name": "custom-react-doughnut-chart",
   "version": "1.0.3",
+  "description": "This is custom doughnut chart which is created for dynamic way show data in chart.",
+  "author": "Mindinventory",
+  "license": "MIT",
+  "private": false,
   "main": "./build-webpack/Chart.js",
   "module": "./build-webpack/Chart.js",
   "files": [
@@ -61,5 +65,17 @@
     "chart",
     "doughnut-chart",
     "custom-react-doughnut-chart"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/Keval-R/custom-chart-demo/issues"
+  },
+  "homepage": "https://github.com/Keval-R/custom-chart-demo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Keval-R/custom-chart-demo.git"
+  },
+  "engines": {
+    "npm": ">=9.2.0",
+    "node": ">=18.4.0"
+  }
 }
