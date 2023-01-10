@@ -69,13 +69,13 @@ const Chart = (props) => {
   const [chartTwoTitle, setChartTwoTitle] = useState([]);
   const [chartTwoData, setChartTwoData] = useState([]);
   const [centerTextChartTwo, setCenterTextChartTwo] = useState([]);
-  const [userSelectedExtraData, setUserSelectedExtraData] = useState(null);
+  const [userSelectedExtraData, setUserSelectedExtraData] = useState([]);
 
   const doughnutData = {
     labels: chartOneTitle ?? [],
     datasets: [
       {
-        label: data?.chartOneDatasetLabel,
+        label: data?.firstChartDataSetLabel,
         data: chartOneData ?? [],
         backgroundColor: chartOneBackgroundColor,
         borderColor: chartOneBorderColor,
@@ -88,7 +88,7 @@ const Chart = (props) => {
     labels: chartTwoTitle,
     datasets: [
       {
-        label: data?.chartTwoDatasetLabel,
+        label: data?.secondChartDataSetLabel,
         data: userSelectedChartTwoData,
         backgroundColor: chartTwoBackgroundColor,
         borderColor: chartTwoBorderColor,
@@ -102,20 +102,21 @@ const Chart = (props) => {
     if (chartTwoData) {
       setUserSelectedChartTwoData(chartTwoData[userIndex]);
     }
-    if (data?.chartExtraData.legend !== 0 && data?.chartExtraData[userIndex]) {
-      setUserSelectedExtraData(data?.chartExtraData[userIndex]);
+
+    if (data?.extraData.length !== 0 && data?.extraData[userIndex]) {
+      setUserSelectedExtraData(data?.extraData[userIndex]);
     }
   }, [userIndex, chartTwoData, data]);
 
   useEffect(() => {
-    if (data?.chartOne) {
+    if (data?.firstChart) {
       setChartOneBackgroundColor([]);
       setChartOneBorderColor([]);
       setChartOneData([]);
       setChartOneTitle([]);
       setChartTwoData([]);
       setCenterTextChartTwo([]);
-      data?.chartOne.map((data) => {
+      data?.firstChart.map((data) => {
         setChartOneBackgroundColor((oldData) => [
           ...oldData,
           data?.backgroundColor ?? "",
@@ -127,18 +128,21 @@ const Chart = (props) => {
 
         setChartOneTitle((oldData) => [...oldData, data?.name ?? ""]);
         setChartOneData((oldData) => [...oldData, data?.data ?? ""]);
-        setChartTwoData((oldData) => [...oldData, data?.chartTwoData ?? []]);
-        setCenterTextChartTwo((oldData) => [...oldData, data?.text ?? ""]);
+        setChartTwoData((oldData) => [...oldData, data?.secondChartData ?? []]);
+        setCenterTextChartTwo((oldData) => [
+          ...oldData,
+          data?.secondChartCenterText ?? "",
+        ]);
         return true;
       });
     }
 
-    if (data?.chartTwo) {
+    if (data?.secondChart) {
       setChartTwoBorderColor([]);
       setChartTwoBackgroundColor([]);
       setChartTwoTitle([]);
-     
-      data?.chartTwo.map((data) => {
+
+      data?.secondChart.map((data) => {
         setChartTwoBackgroundColor((oldData) => [
           ...oldData,
           data?.backgroundColor ?? "",
@@ -173,7 +177,7 @@ const Chart = (props) => {
             </div>
             <div className="col-12 col-xxl-6 col-md-6 col-sm-12 mt-5">
               <div className="d-flex flex-wrap flex-column justify-content-center">
-                {data?.chartOne?.map((data) => {
+                {data?.firstChart?.map((data) => {
                   return (
                     <div key={data?.name} className="">
                       <span
@@ -198,11 +202,11 @@ const Chart = (props) => {
                 {data?.tipData && data?.tipData?.length !== 0 && (
                   <div className="mt-5 text-break">
                     <div>
-                      <h6 className="pl-10">{data?.chartOneTipData}</h6>
+                      <h6 className="pl-10">{data?.firstChartTipTitle}</h6>
                     </div>
                     <div>
                       <label className="pl-10 tip-data text-wrap">
-                        {data?.tipData[userIndex]?.tip1 ?? ""}
+                        {data?.tipData[userIndex]?.firstChartTip ?? ""}
                       </label>
                     </div>
                   </div>
@@ -223,7 +227,7 @@ const Chart = (props) => {
             </div>
             <div className="col-12 col-xxl-6 col-md-6 col-sm-12 mt-5">
               <div className="d-flex flex-wrap flex-column justify-content-center">
-                {data?.chartTwo?.map((data) => {
+                {data?.secondChart?.map((data) => {
                   return (
                     <div key={data?.name} className="w-100">
                       <span
@@ -249,11 +253,11 @@ const Chart = (props) => {
                 {data?.tipData && data?.tipData?.length !== 0 && (
                   <div className="mt-5 text-break tip-data">
                     <div>
-                      <h6 className="pl-10">{data?.chartTwoTipData}</h6>
+                      <h6 className="pl-10">{data?.secondChartTipTitle}</h6>
                     </div>
                     <div>
                       <label className="pl-10 tip-data">
-                        {data?.tipData[userIndex]?.tip2 ?? ""}
+                        {data?.tipData[userIndex]?.secondChartTip ?? ""}
                       </label>
                     </div>
                   </div>
@@ -265,10 +269,10 @@ const Chart = (props) => {
       </div>
 
       <div className="d-flex flex-wrap mt-5">
-        {userSelectedExtraData && (
+        {userSelectedExtraData && userSelectedExtraData.length !== 0 && (
           <div className="d-flex flex-wrap flex-column">
             <div>
-              <h4>{data?.chartExtraDataLabel ?? ""}</h4>
+              <h4>{data?.labelExtraData ?? ""}</h4>
             </div>
             {Object.keys(userSelectedExtraData).map((key, index) => (
               <div className="my-3" key={index}>

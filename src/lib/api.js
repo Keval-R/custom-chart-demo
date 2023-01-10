@@ -1,49 +1,49 @@
 export const fakeData = {
-  chartOneDatasetLabel: "use",
-  chartTwoDatasetLabel: "use",
-  chartOne: [
+  firstChartDataSetLabel: "use",
+  secondChartDataSetLabel: "use",
+  firstChart: [
     {
       name: "Abhik Ghosh",
       backgroundColor: "rgba(255, 99, 132, 0.2)",
       borderColor: "rgba(255, 99, 132, 1)",
       data: 65,
-      chartTwoData: [12, 19, 13, 15, 12],
-      text: "60%",
+      secondChartData: [12, 19, 13, 15, 12],
+      secondChartCenterText: "60%",
     },
     {
       name: "Bobby Deol",
       backgroundColor: "rgba(54, 162, 235, 0.2)",
       borderColor: "rgba(54, 162, 235, 1)",
       data: 44,
-      chartTwoData: [50, 20, 23, 85, 92],
-      text: "64%",
+      secondChartData: [50, 20, 23, 85, 92],
+      secondChartCenterText: "64%",
     },
     {
       name: "Sunny Deol",
       backgroundColor: "rgba(75, 192, 192, 0.2)",
       borderColor: "rgba(75, 192, 192, 1)",
       data: 80,
-      chartTwoData: [20, 30, 63, 65, 72],
-      text: "15%",
+      secondChartData: [20, 30, 63, 65, 72],
+      secondChartCenterText: "15%",
     },
     {
       name: "Dharam Singh Deol",
       backgroundColor: "rgba(153, 102, 255, 0.2)",
       borderColor: "rgba(153, 102, 255, 1)",
       data: 12,
-      chartTwoData: [20, 45, 93, 45, 62],
-      text: "95%",
+      secondChartData: [20, 45, 93, 45, 62],
+      secondChartCenterText: "95%",
     },
     {
       name: "Hema Malini",
       backgroundColor: "rgba(255, 159, 64, 0.2)",
       borderColor: "rgba(255, 159, 64, 1)",
       data: 30,
-      chartTwoData: [80, 85, 43, 75, 42],
-      text: "60%",
+      secondChartData: [80, 85, 43, 75, 42],
+      secondChartCenterText: "60%",
     },
   ],
-  chartTwo: [
+  secondChart: [
     {
       name: "Food",
       backgroundColor: "rgba(255, 99, 132, 0.2)",
@@ -72,32 +72,32 @@ export const fakeData = {
       borderColor: "rgba(255, 159, 64, 1)",
     },
   ],
-  chartOneTipData: "Tip one:",
-  chartTwoTipData: "Tip two:",
+  firstChartTipTitle: "Tip one:",
+  secondChartTipTitle: "Tip two:",
   tipData: [
     {
-      tip1: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
-      tip2: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
+      firstChartTip: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
+      secondChartTip: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
     },
     {
-      tip1: "tip2 main",
-      tip2: "tip2 extra",
+      firstChartTip: "Tip-1 publishing and graphic design",
+      secondChartTip: "Tip-2  publishing and graphic design",
     },
     {
-      tip1: "tip3 main",
-      tip2: "tip3 extra",
+      firstChartTip: "Tip-1 publishing and graphic design",
+      secondChartTip: "Tip-2  publishing and graphic design",
     },
     {
-      tip1: "tip4 main",
-      tip2: "tip4 extra",
+      firstChartTip: "Tip-1 publishing and graphic design",
+      secondChartTip: "Tip-2  publishing and graphic design",
     },
     {
-      tip1: "tip5 main",
-      tip2: "tip5 extra",
+      firstChartTip: "Tip-1 publishing and graphic design",
+      secondChartTip: "Tip-2  publishing and graphic design",
     },
   ],
-  chartExtraDataLabel: "User Data",
-  chartExtraData: [
+  labelExtraData: "User Data",
+  extraData: [
     {
       name: "Abhik Ghosh",
       bio: "Abhik Ghosh is an Indian inorganic chemist and materials scientist and a professor of chemistry at UiT – The Arctic University of Norway in Tromsø, Norway.",
@@ -124,4 +124,5 @@ export const fakeData = {
       dob: "October 16,1948",
     },
   ],
+  
 };

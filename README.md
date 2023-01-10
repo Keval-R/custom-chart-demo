@@ -1,26 +1,19 @@
-
 # react-custom-doughnut-chart
 
-This is custom doughnut chart.  
-Here is 2 chart. First is full doughnut chart when user select any seaction that time half doughnut chart value change & also change bottom dynamic data.
-Also this chart is dynamic create as pass data in component. So you can change color,text & more using JSON object.
-
-
+Custom doughnut chart is dynamic chart component.  
+Here is showing 2 charts. First is full doughnut chart when user select any colour section of first chart that time second chart (half doughnut chart)  value change. Also same as change dynamic way bottom side data.Here we create this chart component dynamic way using JSON object. So here you can change title, colour, text more.
 ## Image & video
 
 **Image**:![screenshot-localhost_3000-2023 01 06-16_27_45](https://user-images.githubusercontent.com/108857417/211002967-1eccf892-809c-4da4-98b9-b19583a08feb.png)
 
 **Video:** https://user-images.githubusercontent.com/108857417/211003095-3dddd797-803f-42e1-87f8-6352b1c5cccf.mp4
 
+## JSON
 
-## Custom JSON
-
-Here is we use one custom json. Also here is you hide some UI seaction
-if set key value as explian here way.
-
-- Key tipData & chartExtraData you pass [ ] (empty array). 
-
-- Key chartOneTipData & chartTwoTipData you pass empty string (""). 
+- Here we use JSON which is use show dynamic data & UI in component. 
+- We can hide some UI seaction if set key value as explian here.
+  - Object key tipData & extraChartData value pass as empty array ([]).
+  - Object key firstChartTipData & secondChartTipData value pass as empty string ("").
 
 ## Installation
 
@@ -29,7 +22,7 @@ Install package.
 ```bash
   npm i custom-react-doughnut-chart
 ```
-    
+
 ## Examples
 
 ```javascript
@@ -125,6 +118,12 @@ const App = () => {
 };
 
 export default App;
-
 ```
 
+# LICENSE!
+
+React custom doughnut chart is [MIT-licensed](https://github.com/Mindinventory/react-native-tabbar-interaction/blob/master/LICENSE).
+
+# Let us know!
+
+We’d be really happy if you send us links to your projects where you use our component. Just send an email to sales@mindinventory.com And do let us know if you have any questions or suggestion regarding our work.
