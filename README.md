@@ -131,7 +131,7 @@ export default App;
 
 # LICENSE!
 
-React custom doughnut chart is [MIT-licensed](https://github.com/Mindinventory/react-native-tabbar-interaction/blob/master/LICENSE).
+React custom doughnut chart is MIT-licensed.
 
 # Let us know!
 
