@@ -1,7 +1,8 @@
 # react-custom-doughnut-chart
 
 Custom doughnut chart is dynamic chart component.  
-Here is showing 2 charts. First is full doughnut chart when user select any colour section of first chart that time second chart (half doughnut chart)  value change. Also same as change dynamic way bottom side data.Here we create this chart component dynamic way using JSON object. So here you can change title, colour, text more.
+Here is showing 2 charts. First is full doughnut chart when user select any colour section of first chart that time second chart (half doughnut chart) value change. Also same as change dynamic way bottom side data.Here we create this chart component dynamic way using JSON object. So here you can change title, colour, text more.
+
 ## Image & video
 
 **Image**:![screenshot-localhost_3000-2023 01 06-16_27_45](https://user-images.githubusercontent.com/108857417/211002967-1eccf892-809c-4da4-98b9-b19583a08feb.png)
@@ -10,10 +11,10 @@ Here is showing 2 charts. First is full doughnut chart when user select any colo
 
 ## JSON
 
-- Here we use JSON which is use show dynamic data & UI in component. 
+- Here we use JSON which is use show dynamic data & UI in component.
 - We can hide some UI seaction if set key value as explian here.
-  - Object key tipData & extraChartData value pass as empty array ([]).
-  - Object key firstChartTipData & secondChartTipData value pass as empty string ("").
+  - Object key tipData & extraData value pass as empty array ([]).
+  - Object key firstChartTipTitle & secondChartTipTitle value pass as empty string ("").
 
 ## Installation
 
@@ -29,35 +30,51 @@ Install package.
 import Chart from "custom-react-doughnut-chart";
 
 const apiData = {
-  chartOneDatasetLabel: "use",
-  chartTwoDatasetLabel: "use",
-  chartOne: [
+  firstChartDataSetLabel: "use",
+  secondChartDataSetLabel: "use",
+  firstChart: [
     {
       name: "Dharam Singh Deol",
       backgroundColor: "rgba(255, 99, 132, 0.2)",
       borderColor: "rgba(255, 99, 132, 1)",
       data: 65,
-      chartTwoData: [12, 15, 12],
-      text: "60%",
+      secondChartData: [13, 15, 12],
+      secondChartCenterText: "60%",
     },
     {
       name: "Bobby Deol",
       backgroundColor: "rgba(54, 162, 235, 0.2)",
       borderColor: "rgba(54, 162, 235, 1)",
       data: 44,
-      chartTwoData: [50, 85, 92],
-      text: "64%",
+      secondChartData: [23, 85, 92],
+      secondChartCenterText: "64%",
     },
     {
       name: "Sunny Deol",
       backgroundColor: "rgba(75, 192, 192, 0.2)",
       borderColor: "rgba(75, 192, 192, 1)",
       data: 80,
-      chartTwoData: [20, 65, 72],
-      text: "15%",
+      secondChartData: [20, 65, 72],
+      secondChartCenterText: "15%",
+    },
+    {
+      name: "Dharam Singh Deol",
+      backgroundColor: "rgba(153, 102, 255, 0.2)",
+      borderColor: "rgba(153, 102, 255, 1)",
+      data: 12,
+      secondChartData: [20, 45, 62],
+      secondChartCenterText: "95%",
+    },
+    {
+      name: "Hema Malini",
+      backgroundColor: "rgba(255, 159, 64, 0.2)",
+      borderColor: "rgba(255, 159, 64, 1)",
+      data: 30,
+      secondChartData: [80, 85, 42],
+      secondChartCenterText: "60%",
     },
   ],
-  chartTwo: [
+  secondChart: [
     {
       name: "Food",
       backgroundColor: "rgba(255, 99, 132, 0.2)",
@@ -76,24 +93,26 @@ const apiData = {
       borderColor: "rgba(255, 159, 64, 1)",
     },
   ],
-  chartOneTipData: "Tip one:",
-  chartTwoTipData: "Tip two:",
+  firstChartTipTitle: "Tip one:",
+  secondChartTipTitle: "Tip two:",
   tipData: [
     {
-      tip1: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
-      tip2: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
+      firstChartTip:
+        "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
+      secondChartTip:
+        "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
     },
     {
-      tip1: "Demo tip1",
-      tip2: "Demo tip2 extra",
+      firstChartTip: "Tip-1 publishing and graphic design",
+      secondChartTip: "Tip-2  publishing and graphic design",
     },
     {
-      tip1: "Demo tip3 main",
-      tip2: "Demo tip3 extra",
+      firstChartTip: "Tip-1 publishing and graphic design",
+      secondChartTip: "Tip-2  publishing and graphic design",
     },
   ],
-  chartExtraDataLabel: "User Data",
-  chartExtraData: [
+  labelExtraData: "User Data",
+  extraData: [
     {
       name: "Dharam Singh Deol",
       bio: 'Dharam Singh Deol (born 8 December 1935), also known mononymously as Dharmendra, is an Indian actor, producer and politician who is known for his work in Hindi films He has also worked in few Punjabi films. Known as the first "He-Man" of Bollywood, Dharmendra has worked in over 301 films in a career spanning over six decades,[1][2]He is one of the most successful actors in the history of Hindi Cinema.[3][4][5] In 1997, he received the Filmfare Lifetime Achievement Award for his contribution to Hindi cinema. He was a member of the 15th Lok Sabha of India, representing Bikaner constituency in Rajasthan from Bharatiya Janata Party (BJP). In 2012, he was awarded India third-highest civilian honour Padma Bhushan by the Government of India.',

@@ -76,24 +76,26 @@ export const fakeData = {
   secondChartTipTitle: "Tip two:",
   tipData: [
     {
-      firstChartTip: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
-      secondChartTip: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
+      firstChartTip:
+        "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
+      secondChartTip:
+        "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
     },
     {
       firstChartTip: "Tip-1 publishing and graphic design",
       secondChartTip: "Tip-2  publishing and graphic design",
     },
     {
-      firstChartTip: "Tip-1 publishing and graphic design",
-      secondChartTip: "Tip-2  publishing and graphic design",
+      firstChartTip: "Tip-12 publishing and graphic design",
+      secondChartTip: "Tip-22  publishing and graphic design",
     },
     {
-      firstChartTip: "Tip-1 publishing and graphic design",
-      secondChartTip: "Tip-2  publishing and graphic design",
+      firstChartTip: "Tip-13 publishing and graphic design",
+      secondChartTip: "Tip-23  publishing and graphic design",
     },
     {
-      firstChartTip: "Tip-1 publishing and graphic design",
-      secondChartTip: "Tip-2  publishing and graphic design",
+      firstChartTip: "Tip-14 publishing and graphic design",
+      secondChartTip: "Tip-24  publishing and graphic design",
     },
   ],
   labelExtraData: "User Data",
@@ -124,5 +126,4 @@ export const fakeData = {
       dob: "October 16,1948",
     },
   ],
-  
 };

@@ -58,78 +58,87 @@ export const halfdoughnutOptions = {
 const Chart = (props) => {
   const { data } = props;
   const pieRef = useRef(null);
-  const [userIndex, setUserIndex] = useState(0);
-  const [userSelectedChartTwoData, setUserSelectedChartTwoData] = useState([]);
-  const [chartOneData, setChartOneData] = useState([]);
-  const [chartOneBackgroundColor, setChartOneBackgroundColor] = useState([]);
-  const [chartOneBorderColor, setChartOneBorderColor] = useState([]);
-  const [chartTwoBackgroundColor, setChartTwoBackgroundColor] = useState([]);
-  const [chartTwoBorderColor, setChartTwoBorderColor] = useState([]);
-  const [chartOneTitle, setChartOneTitle] = useState([]);
-  const [chartTwoTitle, setChartTwoTitle] = useState([]);
-  const [chartTwoData, setChartTwoData] = useState([]);
-  const [centerTextChartTwo, setCenterTextChartTwo] = useState([]);
+  const [chartIndex, setChartIndex] = useState(0);
+  const [userSelectSecondChartData, setUserSelectSecondChartData] = useState(
+    []
+  );
+  const [firstChartData, setFirstChartData] = useState([]);
+  const [firstChartBackgroundColor, setFirstChartBackgroundColor] = useState(
+    []
+  );
+  const [firstChartBorderColor, setFirstChartBorderColor] = useState([]);
+  const [secondChartBackgroundColor, setSecondChartBackgroundColor] = useState(
+    []
+  );
+  const [secondChartBorderColor, setsecondChartBorderColor] = useState([]);
+  const [firstChartTitle, setFirstChartTitle] = useState([]);
+  const [secondChartTitle, setSecondChartTitle] = useState([]);
+  const [secondChartData, setSecondChartData] = useState([]);
+  const [secondChartCenterText, setSecondChartCenterText] = useState([]);
   const [userSelectedExtraData, setUserSelectedExtraData] = useState([]);
 
   const doughnutData = {
-    labels: chartOneTitle ?? [],
+    labels: firstChartTitle ?? [],
     datasets: [
       {
         label: data?.firstChartDataSetLabel,
-        data: chartOneData ?? [],
-        backgroundColor: chartOneBackgroundColor,
-        borderColor: chartOneBorderColor,
+        data: firstChartData ?? [],
+        backgroundColor: firstChartBackgroundColor,
+        borderColor: firstChartBorderColor,
         borderWidth: 1,
       },
     ],
   };
 
   const halfdoughnutData = {
-    labels: chartTwoTitle,
+    labels: secondChartTitle ?? [],
     datasets: [
       {
         label: data?.secondChartDataSetLabel,
-        data: userSelectedChartTwoData,
-        backgroundColor: chartTwoBackgroundColor,
-        borderColor: chartTwoBorderColor,
+        data: userSelectSecondChartData ?? [],
+        backgroundColor: secondChartBackgroundColor,
+        borderColor: secondChartBorderColor,
         borderWidth: 1,
-        text: centerTextChartTwo[userIndex],
+        text: secondChartCenterText[chartIndex],
       },
     ],
   };
 
   useEffect(() => {
-    if (chartTwoData) {
-      setUserSelectedChartTwoData(chartTwoData[userIndex]);
+    if (secondChartData) {
+      setUserSelectSecondChartData(secondChartData[chartIndex]);
     }
 
-    if (data?.extraData.length !== 0 && data?.extraData[userIndex]) {
-      setUserSelectedExtraData(data?.extraData[userIndex]);
+    if (data?.extraData.length !== 0 && data?.extraData[chartIndex]) {
+      setUserSelectedExtraData(data?.extraData[chartIndex]);
     }
-  }, [userIndex, chartTwoData, data]);
+  }, [chartIndex, secondChartData, data]);
 
   useEffect(() => {
     if (data?.firstChart) {
-      setChartOneBackgroundColor([]);
-      setChartOneBorderColor([]);
-      setChartOneData([]);
-      setChartOneTitle([]);
-      setChartTwoData([]);
-      setCenterTextChartTwo([]);
+      setFirstChartBackgroundColor([]);
+      setFirstChartBorderColor([]);
+      setFirstChartData([]);
+      setFirstChartTitle([]);
+      setSecondChartData([]);
+      setSecondChartCenterText([]);
       data?.firstChart.map((data) => {
-        setChartOneBackgroundColor((oldData) => [
+        setFirstChartBackgroundColor((oldData) => [
           ...oldData,
           data?.backgroundColor ?? "",
         ]);
-        setChartOneBorderColor((oldData) => [
+        setFirstChartBorderColor((oldData) => [
           ...oldData,
           data?.borderColor ?? "",
         ]);
 
-        setChartOneTitle((oldData) => [...oldData, data?.name ?? ""]);
-        setChartOneData((oldData) => [...oldData, data?.data ?? ""]);
-        setChartTwoData((oldData) => [...oldData, data?.secondChartData ?? []]);
-        setCenterTextChartTwo((oldData) => [
+        setFirstChartTitle((oldData) => [...oldData, data?.name ?? ""]);
+        setFirstChartData((oldData) => [...oldData, data?.data ?? ""]);
+        setSecondChartData((oldData) => [
+          ...oldData,
+          data?.secondChartData ?? [],
+        ]);
+        setSecondChartCenterText((oldData) => [
           ...oldData,
           data?.secondChartCenterText ?? "",
         ]);
@@ -138,20 +147,20 @@ const Chart = (props) => {
     }
 
     if (data?.secondChart) {
-      setChartTwoBorderColor([]);
-      setChartTwoBackgroundColor([]);
-      setChartTwoTitle([]);
+      setsecondChartBorderColor([]);
+      setSecondChartBackgroundColor([]);
+      setSecondChartTitle([]);
 
       data?.secondChart.map((data) => {
-        setChartTwoBackgroundColor((oldData) => [
+        setSecondChartBackgroundColor((oldData) => [
           ...oldData,
           data?.backgroundColor ?? "",
         ]);
-        setChartTwoBorderColor((oldData) => [
+        setsecondChartBorderColor((oldData) => [
           ...oldData,
           data?.borderColor ?? "",
         ]);
-        setChartTwoTitle((oldData) => [...oldData, data?.name ?? ""]);
+        setSecondChartTitle((oldData) => [...oldData, data?.name ?? ""]);
 
         return true;
       });
@@ -171,7 +180,7 @@ const Chart = (props) => {
                 ref={pieRef}
                 onClick={(event) => {
                   const element = getElementAtEvent(pieRef.current, event);
-                  setUserIndex(element[0]?.index ?? 0);
+                  setChartIndex(element[0]?.index ?? 0);
                 }}
               />
             </div>
@@ -206,7 +215,7 @@ const Chart = (props) => {
                     </div>
                     <div>
                       <label className="pl-10 tip-data text-wrap">
-                        {data?.tipData[userIndex]?.firstChartTip ?? ""}
+                        {data?.tipData[chartIndex]?.firstChartTip ?? ""}
                       </label>
                     </div>
                   </div>
@@ -257,7 +266,7 @@ const Chart = (props) => {
                     </div>
                     <div>
                       <label className="pl-10 tip-data">
-                        {data?.tipData[userIndex]?.secondChartTip ?? ""}
+                        {data?.tipData[chartIndex]?.secondChartTip ?? ""}
                       </label>
                     </div>
                   </div>
