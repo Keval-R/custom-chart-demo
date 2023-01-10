@@ -12,7 +12,7 @@ Here is showing 2 charts. First is full doughnut chart when user select any colo
 ## JSON
 
 - Here we use JSON which is use show dynamic data & UI in component.
-- We can hide some UI seaction if set key value as explian here.
+- We can hide some UI section if set key value as explain here.
   - Object key tipData & extraData value pass as empty array ([]).
   - Object key firstChartTipTitle & secondChartTipTitle value pass as empty string ("").
 
