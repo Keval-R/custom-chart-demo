@@ -117,7 +117,7 @@ const apiData = {
       name: "Dharam Singh Deol",
       bio: 'Dharam Singh Deol (born 8 December 1935), also known mononymously as Dharmendra, is an Indian actor, producer and politician who is known for his work in Hindi films He has also worked in few Punjabi films. Known as the first "He-Man" of Bollywood, Dharmendra has worked in over 301 films in a career spanning over six decades,[1][2]He is one of the most successful actors in the history of Hindi Cinema.[3][4][5] In 1997, he received the Filmfare Lifetime Achievement Award for his contribution to Hindi cinema. He was a member of the 15th Lok Sabha of India, representing Bikaner constituency in Rajasthan from Bharatiya Janata Party (BJP). In 2012, he was awarded India third-highest civilian honour Padma Bhushan by the Government of India.',
       dob: "December 8,1935  ",
-      work: "Actor",
+      work: "Actor", // also add extra key.
     },
     {
       name: "Bobby Deol",
@@ -139,10 +139,3 @@ const App = () => {
 export default App;
 ```
 
-# LICENSE!
-
-React custom doughnut chart is [MIT-licensed](https://github.com/Mindinventory/react-native-tabbar-interaction/blob/master/LICENSE).
-
-# Let us know!
-
-We’d be really happy if you send us links to your projects where you use our component. Just send an email to sales@mindinventory.com And do let us know if you have any questions or suggestion regarding our work.

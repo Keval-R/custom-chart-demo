@@ -1,7 +1,7 @@
 {
   "name": "custom-react-doughnut-chart",
-  "version": "1.0.6",
-  "description": "This is custom doughnut chart which is created for dynamic way show data in chart.",
+  "version": "1.0.8",
+  "description": "Custom doughnut chart is dynamic chart component. Here is showing 2 charts. First is full doughnut chart when user select any colour section of first chart that time second chart (half doughnut chart) value change. Also same as change dynamic way bottom side data.Here we create this chart component dynamic way using JSON object. So here you can change title, colour, text more.",
   "author": "Mindinventory",
   "license": "MIT",
   "private": false,
